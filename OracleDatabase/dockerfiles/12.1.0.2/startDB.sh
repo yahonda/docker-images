@@ -25,3 +25,7 @@ lsnrctl start
 sqlplus / as sysdba << EOF
    STARTUP;
 EOF
+
+sqlplus / as sysdba << EOF
+  alter pluggable database all open;
+EOF
