@@ -44,7 +44,7 @@ ENV ORACLE_BASE=/opt/oracle \
     INSTALL_DB_BINARIES="installDBBinaries.sh" \
     UPDATE_OPATCH="updateOPatch.sh" \
     OPATCH_FILE="p6880880_121010_Linux-x86-64.zip" \
-    COMBO_OJVM_DBPSU_FILE="p24917069_121020_Linux-x86-64.zip" \
+    COMBO_OJVM_DBPSU_FILE="p24433133_121020_Linux-x86-64.zip" \
     INSTALL_COMBO_OJVM_DBPSU="installOJVMDBPSU.sh" \
     DATABASE_SYS_PASSWORD="admin"
 
