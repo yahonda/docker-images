@@ -26,7 +26,7 @@ if [ "$ORACLE_PDB" == "" ]; then
 fi;
 
 # Auto generate ORACLE PWD
-ORACLE_PWD=$DATABASE_SYS_PASSWORD
+ORACLE_PWD="`openssl rand -base64 8`1"
 echo "ORACLE AUTO GENERATED PASSWORD FOR SYS, SYSTEM AND PDBAMIN: $ORACLE_PWD";
 
 # Replace place holders in response file
