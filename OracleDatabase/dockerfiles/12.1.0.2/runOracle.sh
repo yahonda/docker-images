@@ -152,13 +152,9 @@ else
    moveFiles;
 fi;
 
-cd $ORACLE_HOME/OPatch
-./datapatch -verbose
-
 echo "#########################"
 echo "DATABASE IS READY TO USE!"
 echo "#########################"
-
 
 tail -f $ORACLE_BASE/diag/rdbms/*/*/trace/alert*.log &
 childPID=$!
