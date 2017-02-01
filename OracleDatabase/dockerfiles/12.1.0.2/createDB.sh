@@ -47,7 +47,6 @@ echo "LISTENER =
     (ADDRESS = (PROTOCOL = TCP)(HOST = 0.0.0.0)(PORT = 1521)) 
   ) 
 ) 
-USE_SID_AS_SERVICE_listener=on
 
 " > $ORACLE_HOME/network/admin/listener.ora
 
