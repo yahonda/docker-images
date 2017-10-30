@@ -1,5 +1,4 @@
-Oracle Database on Docker
-===============
+# Oracle Database on Docker
 Sample Docker build files to facilitate installation, configuration, and environment setup for DevOps users. For more information about Oracle Database please see the [Oracle Database Online Documentation](http://docs.oracle.com/database/121/index.htm).
 
 ## How to build and run
@@ -69,7 +68,7 @@ To run your Oracle Database Docker image use the **docker run** command as follo
 	                  The character set to use when creating the database (default: AL32UTF8)
 	   -v /opt/oracle/oradata
 	                  The data volume to use for the database.
-	                  Has to be owned by the Unix user "oracle" or set appropriately.
+	                  Has to be writable by the Unix "oracle" (uid: 54321) user inside the container!
 	                  If omitted the database will not be persisted over container recreation.
 	   -v /opt/oracle/scripts/startup | /docker-entrypoint-initdb.d/startup
 	                  Optional: A volume with custom scripts to be run after database startup.
@@ -119,7 +118,7 @@ To run your Oracle Database Express Edition Docker image use the **docker run** 
 
 	   -v /u01/app/oracle/oradata
 	                  The data volume to use for the database.
-	                  Has to be owned by the Unix user "oracle" or set appropriately.
+	                  Has to be writable by the Unix "oracle" (uid: 54321) user inside the container!
 	                  If omitted the database will not be persisted over container recreation.
 	   -v /u01/app/oracle/scripts/startup | /docker-entrypoint-initdb.d
 	                  Optional: A volume with custom scripts to be run after database startup.
@@ -173,9 +172,11 @@ The example below mounts the local directory myScripts to `/opt/oracle/myScripts
 
     docker run --name oracle-ee -p 1521:1521 -v /home/oracle/myScripts:/opt/oracle/scripts/startup -v /home/oracle/oradata:/opt/oracle/oradata oracle/database:12.2.0.1-ee
     
-
 ## Known issues
 * The [`overlay` storage driver](https://docs.docker.com/engine/userguide/storagedriver/selectadriver/) on CentOS has proven to run into Docker bug #25409. We recommend using `btrfs` or `overlay2` instead. For more details see issue #317.
+
+## Frequently asked questions
+Please see [FAQ.md](./FAQ.md) for frequently asked questions.
 
 ## Support
 Oracle Database in single instance configuration is supported for Oracle Linux 7 and Red Hat Enterprise Linux (RHEL) 7.
