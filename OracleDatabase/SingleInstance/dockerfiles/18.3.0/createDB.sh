@@ -56,6 +56,7 @@ echo "LISTENER =
 
 DEDICATED_THROUGH_BROKER_LISTENER=ON
 DIAG_ADR_ENABLED = off
+USE_SID_AS_SERVICE_listener=on
 " > $ORACLE_HOME/network/admin/listener.ora
 
 # Start LISTENER and run DBCA
